@@ -256,7 +256,7 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
               <div>
                 <label for="godiste" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Godište</label>
-                <input type="text" id="godiste" name="godiste" required placeholder="npr. 2012" style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none;">
+                <input type="text" id="godiste" name="godiste" min="1950" max="2020" required placeholder="npr. 2012" style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none;">
               </div>
               <div>
                 <label for="phone" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Broj telefona</label>
@@ -271,7 +271,7 @@
 
             <div style="margin-bottom: 1.5rem;">
               <label for="message" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Poruka</label>
-              <textarea id="message" name="message" rows="3" required placeholder="Vaša poruka ili pitanje..." style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none; resize: vertical;"></textarea>
+              <textarea id="message" name="message" rows="3" required maxlength="200" placeholder="Vaša poruka ili pitanje..." style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none; resize: vertical;"></textarea>
             </div>
 
             <button type="submit" class="btn btn-light" style="width: 100%; padding: 0.9rem; cursor: pointer; border: none; font-weight: 600; font-size: 1rem; border-radius: 6px; transition: opacity 0.2s;">Pošalji poruku</button>
