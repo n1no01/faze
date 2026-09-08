@@ -133,7 +133,7 @@ img {
   background-size: 55px 55px;
 }
 
-.hero-glow {
+/* .hero-glow {
   position: absolute;
   border-radius: 50%;
   filter: blur(2px);
@@ -155,7 +155,7 @@ img {
   right: -4%;
   top: 2%;
   border: 1px solid rgba(255,255,255,.05);
-}
+} */
 
 .hero-grid {
   min-height: 610px;
@@ -264,15 +264,6 @@ img {
   width: min(570px, 100%);
   filter: drop-shadow(0 30px 30px rgba(0,0,0,.45));
   animation: floatLogo 5s ease-in-out infinite;
-}
-
-.logo-ring {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  border: 1px solid rgba(105, 200, 245, .18);
-  box-shadow: 0 0 90px rgba(39, 130, 218, .12);
 }
 
 @keyframes floatLogo {
