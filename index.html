@@ -238,15 +238,64 @@
       <div class="container cta">
         <span class="section-label light">06 / KONTAKT</span>
         <h2>Vrijeme je za<br><em>tvoj prvi korak.</em></h2>
-        <p>Želiš trenirati, saznati više ili upisati dijete u školu košarke?</p>
-        <div class="cta-actions">
-          <a class="btn btn-light" href="mailto:info@faze.ba">info@faze.ba</a>
-          <a class="btn btn-outline-light" href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer">
-            Instagram ↗
-          </a>
+        <p>Želiš trenirati, saznati više ili upisati dijete u školu košarke? Pošalji nam poruku ili nas kontaktiraj direktno.</p>
+        
+        <div class="contact-wrapper" style="max-width: 550px; margin: 2rem auto; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); text-align: left;">
+          
+          <!-- Kontakt forma -->
+          <form action="https://formsubmit.co/info@faze.ba" method="POST" class="contact-form">
+            
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div style="margin-bottom: 1.25rem;">
+              <label for="name" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Ime i prezime</label>
+              <input type="text" id="name" name="name" required placeholder="Vaše ime i prezime" style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none; transition: border-color 0.2s;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+              <div>
+                <label for="godiste" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Godište</label>
+                <input type="text" id="godiste" name="godiste" required placeholder="npr. 2012" style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none;">
+              </div>
+              <div>
+                <label for="phone" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Broj telefona</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+387..." style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none;">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <label for="email" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Email adresa</label>
+              <input type="email" id="email" name="email" required placeholder="vas.email@gmail.com" style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none;">
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label for="message" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Poruka</label>
+              <textarea id="message" name="message" rows="3" required placeholder="Vaša poruka ili pitanje..." style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-light" style="width: 100%; padding: 0.9rem; cursor: pointer; border: none; font-weight: 600; font-size: 1rem; border-radius: 6px; transition: opacity 0.2s;">Pošalji poruku</button>
+          </form>
+
+          <!-- Elegantan prekid i alternativni kontakt linkovi -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 2rem 0 1.5rem 0; color: rgba(255,255,255,0.4); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
+            <span style="height: 1px; background: rgba(255,255,255,0.1); flex: 1;"></span>
+            ili direktno
+            <span style="height: 1px; background: rgba(255,255,255,0.1); flex: 1;"></span>
+          </div>
+
+          <div class="cta-actions" style="display: flex; justify-content: center; gap: 1rem;">
+            <a href="mailto:info@faze.ba" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); transition: background 0.2s;">
+              info@faze.ba
+            </a>
+            <a href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); transition: background 0.2s;">
+              Instagram ↗
+            </a>
+          </div>
+
         </div>
       </div>
-    </section>
+    </section>  
   </main>
 
   <footer>
