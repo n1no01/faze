@@ -760,6 +760,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap:0px;
   }
 
   .hero-logo {
@@ -859,6 +860,10 @@ footer {
     align-items: stretch;
     background: rgba(1,13,43,.98);
     border: 1px solid rgba(255,255,255,.1);
+  }
+
+  .eyebrow{
+    display: none;
   }
 
   .main-nav.open {
