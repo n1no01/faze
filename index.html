@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
 
   <header class="site-header" id="top">
     <div class="container nav-wrap">
@@ -29,8 +29,10 @@
 
       <nav class="main-nav">
         <a href="#o-nama">O nama</a>
+        <a href="#treneri">Treneri</a>
         <a href="#selekcije">Selekcije</a>
         <a href="#skola">Škola košarke</a>
+        <a href="#takmicenja">Takmičenja</a>
         <a href="#kontakt">Kontakt</a>
         <a class="nav-instagram" href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
       </nav>
@@ -68,62 +70,97 @@
         </div>
       </div>
     </section>
+  
+  <!-- O NAMA SEKCIJA -->
+<section class="section dark-section about-section" id="o-nama">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="section-label light">01 / O NAMA</span>
+        <h2>Više od kluba. <em>Tvoj put.</em></h2>
+      </div>
+      <p>Košarkaški klub FaZe osnovan je u ljeto 2026. godine u Sarajevu sa jasnom vizijom: jačanje omladinske ženske košarke i stvaranje zdrave sredine za razvoj budućih šampionki.</p>
+    </div>
 
-   <section class="section about" id="o-nama">
-      <div class="container two-col">
-        <div>
-          <span class="section-label">01 / O NAMA</span>
-          <h2>Vraćamo žensku<br><em>košarku u Sarajevo.</em></h2>
-        </div>
-        <div class="section-text">
-          <p>
-            Košarkaški klub FaZe osnovan je u ljeto 2026. godine u Sarajevu sa jasnom idejom: 
-            jačanje omladinske ženske košarke i pružanje prilike igračicama da u zdravom kolektivu 
-            grade svoju karijeru.
-          </p>
-          <p>
-            <strong>FaZe je više od imena — to je stav.</strong> To je želja da se svaki trening 
-            odradi najbolje moguće, da se ne odustaje kada je teško i da se svaki izazov 
-            pretvori u priliku za napredak.
-          </p>
-          <p class="muted">
-            Za djevojke koje tek počinju, mlade reprezentativke i sve one koje se usuđuju sanjati — 
-            ovdje se gradi pobjednički mentalitet.
-          </p>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Šta znači FaZe?</h3>
+        <p>FaZe je ime koje simbolizira pobjednički duh, snagu, odlučnost i vjeru u vlastite mogućnosti. Za nas to nije samo naziv kluba, već stav – želja da se svaki trening odradi najbolje moguće i da se svaki izazov pretvori u priliku za napredak.</p>
+        <p><strong>Mentalitet pobjednika:</strong> Boriti se, učiti iz poraza, poštovati protivnika i uvijek težiti tome da budemo bolji nego jučer.</p>
+        <div class="about-quote">
+          <span>IGRAJ. RASTI. POBJEĐUJ!</span>
+          <small>Jer pobjeda nije samo rezultat na semaforu, već svaki savladani izazov.</small>
         </div>
       </div>
-    </section>
 
-    <section class="section coach" id="trener">
-      <div class="container coach-grid">
-        <div class="coach-photo">
-          <div class="coach-photo-wrap">
-            <!-- Ovdje ubaci sliku trenera, npr. <img src="nidzara-tabakovic.jpg" alt="Nidžara Tabaković"> -->
-            <div class="photo-placeholder">
-              <span>FOTOGRAFIJA</span>
-              <strong>NIDŽARA TABAKOVIĆ</strong>
-            </div>
-          </div>
-        </div>
-
-        <div class="coach-copy">
-          <span class="section-label">02 / GLAVNI TRENER</span>
-          <h2>Iskustvo koje<br><em>stvara šampione.</em></h2>
-          <p>
-            Naš trenažni process vodi <strong>Nidžara Tabaković</strong>, bivša reprezentativka Bosne i Hercegovine. 
-            Svojim bogatim igračkim iskustvom, znanjem i posvećenošću prenosi pobjednički 
-            mentalitet na mlađe generacije.
-          </p>
-          <p>
-            Fokus nije samo na taktičkoj i tehničkoj pripremi, već i na izgradnji radne etike, 
-            discipline i samopouzdanja kod svakog člana kluba.
-          </p>
-          <div class="coach-badge">
-            <span>Bivša reprezentativka BiH</span>
-          </div>
+      <div class="about-card highlight-card">
+        <h3>Vraćamo ulaganje u djevojke</h3>
+        <p>Sarajevo je uvijek imalo prepoznatljivu žensku košarku. Vrijeme je da je ponovo gradimo i pružimo djevojkama put dalje – od prvih koraka s loptom do velikih scena i reprezentativnih dresova.</p>
+        <ul class="about-list">
+          <li>✔ Klub za djecu koja se usuđuju sanjati</li>
+          <li>✔ Ozbiljan rad i kvalitetni treneri</li>
+          <li>✔ Podrška za mlade talente i reprezentativke</li>
+        </ul>
+        <div class="about-footer-text">
+          <strong>FaZe – ime za one koji vjeruju da mogu više.</strong>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+ <section class="section coach" id="treneri">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="section-label">02 / TRENERI</span>
+        <h2>Stručni štab koji<br><em>stvara šampione.</em></h2>
+      </div>
+      <p>Iskustvo, znanje i posvećenost za razvoj pobjedničkog mentaliteta.</p>
+    </div>
+
+    <div class="cards">
+      <!-- Trener 1: Nidžara -->
+      <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 220px; background: #010d2b; overflow: hidden;">
+          <img src="nidzara-tabakovic.jpg" alt="Nidžara Tabaković" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 30px;">
+          <span class="card-number">01</span>
+          <h3>Nidžara Tabaković</h3>
+          <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Glavni trener / Bivša reprezentativka BiH</p>
+          <p>Vodi glavni trenažni proces svojim bogatim igračkim iskustvom i prenosi pobjednički mentalitet.</p>
+        </div>
+      </div>
+
+      <!-- Trener 2 -->
+      <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 220px; background: #010d2b; overflow: hidden;">
+          <img src="trener-2.jpg" alt="Nino Herenda" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 30px;">
+          <span class="card-number">02</span>
+          <h3>Nino Herenda</h3>
+          <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Kondicioni trener</p>
+          <p>Zadužen je za fizičku pripremu, snagu, eksplozivnost i prevenciju povreda kako bi ekipa bila na vrhunskom nivou tokom cijele sezone.</p>
+        </div>
+      </div>
+
+      <!-- Trener 3 (opciono) -->
+      <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 220px; background: #010d2b; overflow: hidden;">
+          <img src="trener-3.jpg" alt="Ime Trenera 3" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div style="padding: 30px;">
+          <span class="card-number">03</span>
+          <h3>Ime Trenera 3</h3>
+          <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Kondicijski trener</p>
+          <p>Zadužen za snagu, eksplozivnost, prevenciju povreda i vrhunsku fizičku pripremu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section dark-section" id="selekcije">
       <div class="container">
@@ -135,40 +172,29 @@
         </div>
 
         <div class="cards cards-6">
-          <article class="team-card">
-            <span class="card-number">01</span>
-            <h3>Škola košarke</h3>
-            <p>Prvi susreti s košarkaškom loptom, učenje kroz zabavu i sticanje dobrih sportskih navika.</p>
-          </article>
 
           <article class="team-card">
-            <span class="card-number">02</span>
+            <span class="card-number">01</span>
             <h3>Mini basket</h3>
             <p>Osnovni motorički razvoj, koordinacija i učenje bazičnih košarkaških elemenata.</p>
           </article>
 
           <article class="team-card">
-            <span class="card-number">03</span>
+            <span class="card-number">02</span>
             <h3>Pionirke</h3>
             <p>Prelazak na ozbiljniji rad, usavršavanje tehnike i prvi pravi takmičarski izazovi.</p>
           </article>
 
           <article class="team-card">
-            <span class="card-number">04</span>
+            <span class="card-number">03</span>
             <h3>Kadetkinje</h3>
             <p>Ključne godine razvoja, taktičko uigravanje i priprema za zahtjevniji nivo takmičenja.</p>
           </article>
 
           <article class="team-card">
-            <span class="card-number">05</span>
+            <span class="card-number">04</span>
             <h3>Juniorke</h3>
             <p>Kontinuitet i nadogradnja – jasan put prema seniorskom timu i velikoj sceni.</p>
-          </article>
-
-          <article class="team-card">
-            <span class="card-number">06</span>
-            <h3>Seniorke</h3>
-            <p>Završna faza razvoja, seniorska košarka, takmičarski ritam i nastupi za buduće reprezentativke.</p>
           </article>
         </div>
       </div>
@@ -239,9 +265,41 @@
       </div>
     </section>
 
+    <section class="section leagues-section" id="takmicenja">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="section-label light">06 / TAKMIČENJA</span>
+        <h2>U kojim <em>ligama</em> se natječemo</h2>
+      </div>
+      <p>Pratite naše selekcije kroz zvanična domaća i regionalna takmičenja ove sezone.</p>
+    </div>
+    
+    <div class="cards">
+      <div class="team-card">
+        <span class="card-number">01</span>
+        <h3>Prvenstvo BiH</h3>
+        <p>Glavna seniorska selekcija nastupa u elitnom rang takmičenja Bosne i Hercegovine.</p>
+      </div>
+      
+      <div class="team-card">
+        <span class="card-number">02</span>
+        <h3>Omladinska Liga</h3>
+        <p>Kadetkinje i juniorke se takmiče u razvojnim ligama kroz sistem saveza s ciljem sticanja iskustva.</p>
+      </div>
+      
+      <div class="team-card">
+        <span class="card-number">03</span>
+        <h3>Turniri</h3>
+        <p>Naše selekcije učestvuju u različitim turnirima kako bi razvile svoje vještine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
     <section class="cta-section" id="kontakt">
       <div class="container cta">
-        <span class="section-label light">06 / KONTAKT</span>
+        <span class="section-label light">07 / KONTAKT</span>
         <h2>Vrijeme je za<br><em>tvoj prvi korak.</em></h2>
         <p>Želiš trenirati, saznati više ili upisati dijete u školu košarke? Pošalji nam poruku ili nas kontaktiraj direktno.</p>
         

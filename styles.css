@@ -45,7 +45,6 @@ img {
 }
 
 /* NAVIGATION */
-
 .site-header {
   position: fixed;
   inset: 0 0 auto;
@@ -110,15 +109,12 @@ img {
 }
 
 /* HERO */
-
 .hero {
   min-height: 790px;
   position: relative;
   overflow: hidden;
   color: white;
-  background:
-    radial-gradient(circle at 74% 45%, rgba(22, 88, 190, .48), transparent 32%),
-    linear-gradient(120deg, #010c27 0%, #032263 52%, #04133b 100%);
+  background: linear-gradient(120deg, #010c27 0%, #032263 52%, #04133b 100%);
   padding-top: 82px;
 }
 
@@ -127,35 +123,11 @@ img {
   position: absolute;
   inset: 0;
   opacity: .22;
-  background-image:
+  background-image: 
     linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
   background-size: 55px 55px;
 }
-
-/* .hero-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(2px);
-  pointer-events: none;
-}
-
-.hero-glow-one {
-  width: 460px;
-  height: 460px;
-  right: 8%;
-  top: 18%;
-  border: 1px solid rgba(105, 200, 245, .2);
-  box-shadow: 0 0 100px rgba(105, 200, 245, .08);
-}
-
-.hero-glow-two {
-  width: 700px;
-  height: 700px;
-  right: -4%;
-  top: 2%;
-  border: 1px solid rgba(255,255,255,.05);
-} */
 
 .hero-grid {
   min-height: 610px;
@@ -311,7 +283,6 @@ img {
 }
 
 /* SECTIONS */
-
 .section {
   padding: 115px 0;
 }
@@ -362,7 +333,6 @@ h2 em {
 }
 
 /* DARK SECTION */
-
 .dark-section {
   color: white;
   background: var(--navy-dark);
@@ -407,6 +377,10 @@ h2 em {
   gap: 15px;
 }
 
+.cards-6 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .team-card {
   min-height: 290px;
   padding: 45px 35px 55px;
@@ -446,9 +420,41 @@ h2 em {
   font-size: 13px;
 }
 
+/* COACH & LEAGUES SPECIFIC */
+.coach {
+  background: #f3f7fc;
+}
+
+.coach .team-card,
+.leagues-section .team-card {
+  background: var(--navy-dark);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.coach .team-card h3,
+.leagues-section .team-card h3 {
+  color: white;
+}
+
+.coach .team-card p,
+.leagues-section .team-card p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.leagues-section {
+  background: var(--navy-dark);
+  color: white;
+}
+
+.leagues-section .section-heading h2 em {
+  color: var(--blue-light);
+}
+
+.leagues-section .section-heading p {
+  color: rgba(255, 255, 255, 0.6);
+}
 
 /* SCHOOL */
-
 .school {
   background: #eef5fb;
 }
@@ -465,19 +471,8 @@ h2 em {
   position: relative;
   display: grid;
   place-items: center;
-  background:
-    linear-gradient(145deg, rgba(1,13,43,.95), rgba(3,49,117,.95)),
-    url("images/logo.png") center/contain no-repeat;
+  background: var(--navy-dark);
   overflow: hidden;
-}
-
-.school-visual::before {
-  content: "";
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  border: 1px solid rgba(105,200,245,.2);
-  border-radius: 50%;
 }
 
 .visual-card {
@@ -545,7 +540,6 @@ h2 em {
 }
 
 /* VALUES */
-
 .value-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -573,19 +567,100 @@ h2 em {
 }
 
 .value p {
-  color: #2c3a57;  
+  color: #2c3a57;   
   line-height: 1.75;     
   font-size: 14px;     
 }
 
-/* CTA */
+/* O KLUBU */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
 
+.about-card {
+  padding: 45px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.25s ease;
+}
+
+.about-card:hover {
+  border-color: rgba(105, 200, 245, 0.35);
+}
+
+.about-card h3 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  letter-spacing: -.03em;
+  color: white;
+}
+
+.about-card p {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.about-quote {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(11, 63, 158, 0.2);
+  border-left: 3px solid var(--blue-light);
+  border-radius: 0 4px 4px 0;
+}
+
+.about-quote span {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--blue-light);
+  margin-bottom: 6px;
+}
+
+.about-quote small {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  gap: 12px;
+}
+
+.about-list li {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.about-footer-text {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  color: var(--blue-light);
+}
+
+/* CTA */
 .cta-section {
   position: relative;
   overflow: hidden;
   padding: 115px 0;
   color: white;
-  background:
+  background: 
     radial-gradient(circle at 80% 40%, rgba(42, 130, 223, .35), transparent 30%),
     linear-gradient(125deg, #010b25, #062e78);
 }
@@ -620,7 +695,6 @@ h2 em {
 }
 
 /* FOOTER */
-
 footer {
   color: rgba(255,255,255,.5);
   background: #010817;
@@ -667,92 +741,41 @@ footer {
   letter-spacing: .12em;
 }
 
-.coach {
-  background: #f3f7fc;
-}
-
-.coach-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.coach-photo-wrap {
-  position: relative;
-  width: 100%;
-  min-height: 480px;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(3, 27, 85, 0.1);
-  background: linear-gradient(145deg, #010d2b, #0b3f9e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.coach-photo-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.photo-placeholder {
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-.photo-placeholder span {
-  display: block;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .2em;
-  color: var(--blue-light);
-  margin-bottom: 8px;
-}
-
-.photo-placeholder strong {
-  font-size: 18px;
-  letter-spacing: -.02em;
-}
-
-.coach-copy h2 {
-  margin-bottom: 25px;
-}
-
-.coach-badge {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 18px;
-  background: var(--navy);
-  color: var(--blue-light);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  border-radius: 4px;
-}
-
-/* RESPONSIVE */
-
+/* RESPONSIVE (MAX-WIDTH: 900px) */
 @media (max-width: 900px) {
   .main-nav {
     gap: 17px;
   }
 
   .hero {
-    min-height: 720px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .hero-grid,
-  .school-grid {
-    grid-template-columns: 1fr;
+  .hero-grid {
+    min-height: unset;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-logo {
+    display: flex !important;
+    order: -1;
+    min-height: 260px;
+    margin-bottom: 10px;
+  }
+
+  .hero-logo img {
+    width: min(260px, 75%);
+    animation: none;
   }
 
   .hero-copy {
-    padding-top: 60px;
+    padding-top: 20px;
     text-align: center;
   }
 
@@ -765,28 +788,23 @@ footer {
     justify-content: center;
   }
 
-  .hero-logo {
-    display: none;
+  .two-col,
+  .school-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
   }
 
-  .two-col {
-    gap: 35px;
-  }
-
-  .cards {
+  .cards,
+  .cards-6 {
     grid-template-columns: 1fr;
   }
 
   .team-card {
-    min-height: 300px;
-  }
-
-  .school-grid {
-    gap: 55px;
+    min-height: 250px;
   }
 
   .school-visual {
-    min-height: 430px;
+    min-height: 350px;
   }
 
   .value-grid {
@@ -801,8 +819,17 @@ footer {
     flex-wrap: wrap;
     padding: 25px 0;
   }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-card {
+    padding: 30px 20px;
+  }
 }
 
+/* RESPONSIVE (MAX-WIDTH: 680px) */
 @media (max-width: 680px) {
   .container {
     width: min(100% - 28px, 1160px);
@@ -844,15 +871,10 @@ footer {
 
   .hero {
     padding-top: 72px;
-    min-height: 710px;
-  }
-
-  .hero-grid {
-    min-height: 600px;
   }
 
   .hero h1 {
-    font-size: clamp(58px, 18vw, 90px);
+    font-size: clamp(48px, 15vw, 80px);
   }
 
   .hero-copy p {
@@ -875,10 +897,6 @@ footer {
     padding: 80px 0;
   }
 
-  .two-col {
-    grid-template-columns: 1fr;
-  }
-
   .section-heading {
     display: block;
   }
@@ -888,7 +906,7 @@ footer {
   }
 
   .school-visual {
-    min-height: 350px;
+    min-height: 300px;
   }
 
   .visual-card {
@@ -916,15 +934,18 @@ footer {
   .footer-links {
     flex-wrap: wrap;
   }
-}
 
-@media (max-width: 900px) {
-  .coach-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
+  .cta-actions, .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-actions .btn, .hero-actions .btn {
+    width: 100%;
+    text-align: center;
   }
   
-  .coach-photo-wrap {
-    min-height: 380px;
+  .hero-bottom {
+    display: none;
   }
 }
