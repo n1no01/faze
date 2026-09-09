@@ -954,3 +954,6 @@ footer {
     display: none;
   }
 }
+
+
+#treneri em, .values h2 em { color: var(--blue); }
