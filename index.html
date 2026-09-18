@@ -20,12 +20,19 @@
   <header class="site-header" id="top">
     <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="FaZe početna">
-        <img src="images/logo.png" alt="Logo KK FaZe">
+        <img src="images/KKFAZE.png" alt="Logo KK FaZe">
       </a>
 
-      <button class="menu-toggle" aria-label="Otvori meni" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <!-- NOVO: Brzi linkovi vidljivi na mobitelu pored hamburger menija -->
+      <div class="mobile-header-actions">
+        <a class="header-insta-icon" href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a class="header-contact-btn" href="#kontakt">Kontakt</a>
+        <button class="menu-toggle" aria-label="Otvori meni" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
 
       <nav class="main-nav">
         <a href="#o-nama">O nama</a>
@@ -34,7 +41,6 @@
         <a href="#skola">Škola košarke</a>
         <a href="#takmicenja">Takmičenja</a>
         <a href="#kontakt">Kontakt</a>
-        <a class="nav-instagram" href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
       </nav>
     </div>
   </header>
@@ -58,7 +64,7 @@
         </div>
 
         <div class="hero-logo">
-          <img src="images/logo.png" alt="KK FaZe logo">
+          <img src="images/KKFAZE.png" alt="KK FaZe logo">
         </div>
       </div>
       <div class="hero-bottom">
@@ -70,7 +76,7 @@
         </div>
       </div>
     </section>
-  
+ 
   <!-- O NAMA SEKCIJA -->
 <section class="section dark-section about-section" id="o-nama">
   <div class="container">
@@ -95,9 +101,10 @@
 
       <div class="about-card highlight-card">
         <h3>Vraćamo ulaganje u djevojke</h3>
-        <p>Sarajevo je uvijek imalo prepoznatljivu žensku košarku. Vrijeme je da je ponovo gradimo i pružimo djevojkama put dalje – od prvih koraka s loptom do velikih scena i reprezentativnih dresova.</p>
+        <p>Sarajevo je uvijek imalo prepoznatljivu žensku košarku. Vrijeme je da je ponovo gradimo i pružimo djevojkama put dalje – od prvih koraka s loptom do velikih scena i reprezentacijskih dresova.</p>
         <ul class="about-list">
           <li>✔ Klub za djecu koja se usuđuju sanjati</li>
+          <li>✔ Klub za roditelje koji djeci žele mjesto dobrog odgoja</li>
           <li>✔ Ozbiljan rad i kvalitetni treneri</li>
           <li>✔ Podrška za mlade talente i reprezentativke</li>
         </ul>
@@ -115,50 +122,89 @@
       <div>
         <span class="section-label">02 / TRENERI</span>
         <h2>Stručni štab koji<br><em>stvara šampione.</em></h2>
+        <h5>Jer godine treninga, talent i dječiji san zaslužuju ozbiljan rad, kvalitetne trenere i posvećen klub. Cilj je jednostavan: pomoći svakoj djevojci da postane najbolja verzija svoje igre.</h5>
       </div>
       <p>Iskustvo, znanje i posvećenost za razvoj pobjedničkog mentaliteta.</p>
     </div>
 
-    <div class="cards">
+    <div class="cards cards-4-grid">
       <!-- Trener 1: Nidžara -->
       <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="height: 220px; background: #010d2b; overflow: hidden;">
+        <div style="height: 220px; background: white; overflow: hidden;">
           <img src="nidzara-tabakovic.jpg" alt="Nidžara Tabaković" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="padding: 30px;">
           <span class="card-number">01</span>
           <h3>Nidžara Tabaković</h3>
           <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Glavni trener / Bivša reprezentativka BiH</p>
-          <p>Vodi glavni trenažni proces svojim bogatim igračkim iskustvom i prenosi pobjednički mentalitet.</p>
+          <p>Vodi glavni trenažni proces svojim bogatim igračkim iskustvom i prenosi pobjednički mentalitet. Nidžara je dokazani trener sa prepoznatljivim stilom vođenja tima koji se zasniva na poštovanju, podršci, disciplini i fokusu.</p>
         </div>
       </div>
 
-      <!-- Trener 2 -->
+      <!-- Trener 2: Nino -->
       <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="height: 220px; background: #010d2b; overflow: hidden;">
-          <img src="trener-2.jpg" alt="Nino Herenda" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="height: 220px; background: white; overflow: hidden;">
+          <img src="" alt="Nino Herenda" style="margin: 0 auto; width: 50%; height: 100%; object-fit: cover;">
         </div>
         <div style="padding: 30px;">
           <span class="card-number">02</span>
           <h3>Nino Herenda</h3>
-          <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Kondicioni trener</p>
+          <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Kondicijski trener</p>
           <p>Zadužen je za fizičku pripremu, snagu, eksplozivnost i prevenciju povreda kako bi ekipa bila na vrhunskom nivou tokom cijele sezone.</p>
         </div>
       </div>
 
-      <!-- Trener 3 (opciono) -->
+      <!-- Trener 3: Amir -->
       <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="height: 220px; background: #010d2b; overflow: hidden;">
-          <img src="trener-3.jpg" alt="Ime Trenera 3" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="height: 220px; background: white; overflow: hidden;">
+          <img src="" alt="Amir Aljilji" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="padding: 30px;">
           <span class="card-number">03</span>
-          <h3>Ime Trenera 3</h3>
+          <h3>Amir Aljilji</h3>
           <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Kondicijski trener</p>
-          <p>Zadužen za snagu, eksplozivnost, prevenciju povreda i vrhunsku fizičku pripremu.</p>
+          <p>Istaknuti magistar sporta koji svoje iskustvo vođenja ženske reprezentacije BiH donosi i na naše treninge s ciljem jačanja kondicije, prevencije povreda i vođenja košarkaške strategije.</p>
+        </div>
+      </div>
+
+      <!-- Trener 4: (Placeholder / Dodatni trener) -->
+      <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 220px; background: white; overflow: hidden;">
+          <img src="" alt="Amra Đapo" style="margin: 0 auto; width: 50%; height: 100%; object-fit: contain; padding: 20px;">
+        </div>
+        <div style="padding: 30px;">
+          <span class="card-number">04</span>
+          <h3>Amra Đapo</h3>
+          <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Pomoćni trener</p>
+          <p>Radom sa selekcijama i školama košarke donosi iskustvo na međunarodnoj sceni i reprezentacijskim nastupima prenoseći im ljubav prema sportu, šampionski i timski duh, a istančanim okom razvija talent svakog djeteta. </p>
         </div>
       </div>
     </div>
+
+    <!-- DODANI TEKST I LISTA ISPOD TRENERA -->
+    <div class="coach-extra-content">
+      <p class="coach-extra-intro">
+        Kroz ciljane treninge u sali, na atletskoj stazi i u teretani razvijamo:
+      </p>
+      
+      <ul class="coach-bullet-list">
+        <li><span>✓</span> tehniku i kontrolu lopte</li>
+        <li><span>✓</span> brzinu i eksplozivnost</li>
+        <li><span>✓</span> skočnost, okretnost i koordinaciju</li>
+        <li><span>✓</span> snagu i stabilnost</li>
+        <li><span>✓</span> prevenciju sportskih povreda</li>
+        <li><span>✓</span> fleksibilnost i mobilnost</li>
+        <li><span>✓</span> košarkaške motoričke i funkcionalne sposobnosti</li>
+        <li><span>✓</span> timski rad</li>
+      </ul>
+
+      <div class="coach-extra-footer">
+        <p>Cilj nije samo biti spreman za sljedeću utakmicu.</p>
+        <p class="highlight-goal">Cilj je biti korak ispred.</p>
+        <a href="#kontakt" class="btn btn-primary coach-cta-btn">SAZNAJ VIŠE O INDIVIDUALNOM RAZVOJU — pitaj nas!</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -176,25 +222,38 @@
           <article class="team-card">
             <span class="card-number">01</span>
             <h3>Mini basket</h3>
-            <p>Osnovni motorički razvoj, koordinacija i učenje bazičnih košarkaških elemenata.</p>
+            <p>Uzrast 11 godina i mlađe. Treninzi za cilj imaju osnovni motorički razvoj, 
+              koordinaciju i učenje bazičnih košarkaških elemenata i pravila. 
+              Kroz različite turnire, lige i prijateljske utakmice, u ovom uzrastu se 
+              stiču prva iskustva zvaničnih utakmica. 
+            </p>
           </article>
 
           <article class="team-card">
             <span class="card-number">02</span>
             <h3>Pionirke</h3>
-            <p>Prelazak na ozbiljniji rad, usavršavanje tehnike i prvi pravi takmičarski izazovi.</p>
+            <p>Uzrast 13 godina i mlađe. Prelazak na ozbiljniji rad, usavršavanje tehnike 
+              i prvi pravi takmičarski izazovi. Pored kantonalnih i federalnih utakmica,
+               počinju i državna takmičenja kao i putovanja u inostranstvo na međunarodne
+                turnire.</p>
           </article>
 
           <article class="team-card">
             <span class="card-number">03</span>
             <h3>Kadetkinje</h3>
-            <p>Ključne godine razvoja, taktičko uigravanje i priprema za zahtjevniji nivo takmičenja.</p>
+            <p>Uzrast 15 godina i mlađe. U fokus se stavljaju razvoj 
+               strategije na terenu i ciljani fizički treninzi za prevenciju povreda 
+               uz aktivno takmičenje na državnom nivou, ali i učešće u međunarodnim turnirima.
+            </p>
           </article>
 
           <article class="team-card">
             <span class="card-number">04</span>
             <h3>Juniorke</h3>
-            <p>Kontinuitet i nadogradnja – jasan put prema seniorskom timu i velikoj sceni.</p>
+            <p>Uzrast 17 godina i mlađe. Kontinuitet i nadogradnja – jasan put prema seniorskom timu i velikoj sceni. 
+              Poseban akcenat se stavlja na timske strategije, profil svakog igrača, prevencije povreda, 
+              i jačanje svih već izgrađenih košarkaških elemenata.
+            </p>
           </article>
         </div>
       </div>
@@ -214,14 +273,16 @@
           <span class="section-label">04 / ŠKOLA KOŠARKE</span>
           <h2>Mjesto za<br><em>prve korake.</em></h2>
           <p>
-            U našu školu košarke primamo i djevojčice i dječake. Bez obzira na
+            Škola košarke je mješovita grupa djevojčica i dječaka. Bez obzira na
             prethodno iskustvo, cilj je da djeca kroz zabavu i kvalitetan rad
-            zavole košarku i steknu dobre sportske navike.
+            zavole košarku i steknu dobre sportske navike. Iz škole košarke djevojčice napreduju
+            u FaZe ženske selekcije, a dječaci koji su spremni za selekciju dobijaju priliku 
+            i preporuku da se pridruže muškoj ekipi naših sportskih partnera.
           </p>
 
           <div class="check-list">
             <div><span>✓</span> Treninzi prilagođeni uzrastu</div>
-            <div><span>✓</span> Razvoj osnovnih košarkaških vještina</div>
+            <div><span>✓</span> Razvoj osnovnih sportskih i košarkaških vještina</div>
             <div><span>✓</span> Rad u pozitivnoj i sigurnoj atmosferi</div>
             <div><span>✓</span> Djevojčice i dječaci su dobrodošli</div>
           </div>
@@ -270,29 +331,45 @@
     <div class="section-heading">
       <div>
         <span class="section-label light">06 / TAKMIČENJA</span>
-        <h2>U kojim <em>ligama</em> se natječemo</h2>
+        <h2>Lige u kojim se <em>natječemo</em></h2>
       </div>
-      <p>Pratite naše selekcije kroz zvanična domaća i regionalna takmičenja ove sezone.</p>
+    </div>
+
+    <!-- AŽURIRANI TEKST ZA LIGE -->
+    <div class="leagues-description-box" style="margin-bottom: 40px; color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 15px; max-width: 800px;">
+      <p style="margin-bottom: 1rem;">
+        Rast nastaje kroz iskustvo, a iskustvo se stiče igranjem utakmica u ligama i na turnirima. Naš cilj je da djevojke budu na terenu dovoljno često da naučeno na treningu mogu pretvoriti u samopouzdanje, košarkaško znanje i kvalitetnu igru.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        Jer igračica ne raste samo na treningu. Raste kada igra.
+      </p>
+      <p style="font-weight: 700; color: var(--blue-light); margin-bottom: 1rem;">
+        Pratite naše selekcije kroz zvanična domaća i regionalna takmičenja ove sezone:
+      </p>
     </div>
     
     <div class="cards">
       <div class="team-card">
         <span class="card-number">01</span>
-        <h3>Prvenstvo BiH</h3>
-        <p>Glavna seniorska selekcija nastupa u elitnom rang takmičenja Bosne i Hercegovine.</p>
+        <h3>A1 Federalna razvojna liga</h3>
+        <p>Takmičenje prilagođeno razvoju i sticanju neophodnog takmičarskog iskustva mlađih selekcija.</p>
       </div>
       
       <div class="team-card">
         <span class="card-number">02</span>
-        <h3>Omladinska Liga</h3>
-        <p>Kadetkinje i juniorke se takmiče u razvojnim ligama kroz sistem saveza s ciljem sticanja iskustva.</p>
+        <h3>KS Kantonalne lige</h3>
+        <p>KS juniorska liga i KS kadetska liga kroz sistem kantonalnog saveza za testiranje napretka.</p>
       </div>
       
       <div class="team-card">
         <span class="card-number">03</span>
-        <h3>Turniri</h3>
-        <p>Naše selekcije učestvuju u različitim turnirima kako bi razvile svoje vještine.</p>
+        <h3>ŽOL Kadetska liga</h3>
+        <p>Regionalna Ženska omladinska liga (ŽOL) za kadetkinje i jake međunarodne turnire.</p>
       </div>
+    </div>
+
+    <div class="leagues-footer-note" style="margin-top: 35px; font-size: 14px; color: rgba(255,255,255,0.7);">
+      Svježe informacije o ligama, takmičenjima, turnirima i rezultatima pratite na našem <a href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" style="color: var(--blue-light); text-decoration: underline; font-weight: 600;">instagram kanalu</a>.
     </div>
   </div>
 </section>
@@ -319,7 +396,7 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
               <div>
                 <label for="godiste" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Godište</label>
-                <input type="text" id="godiste" name="godiste" min="1950" max="2020" required placeholder="npr. 2012" style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none;">
+                <input type="text" id="godiste" name="godiste" required placeholder="npr. 2012" style="width: 100%; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; outline: none;">
               </div>
               <div>
                 <label for="phone" style="display: block; margin-bottom: 0.5rem; color: #fff; font-size: 0.9rem; font-weight: 500;">Broj telefona</label>
@@ -364,7 +441,7 @@
   <footer>
     <div class="container footer-wrap">
       <div class="footer-brand">
-        <img src="images/logo.png" alt="KK FaZe">
+        <img src="images/KKFAZE.png" alt="KK FaZe">
         <span>Košarkaški klub FaZe · Sarajevo</span>
       </div>
      

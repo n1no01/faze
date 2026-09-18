@@ -86,9 +86,32 @@ img {
   color: var(--cyan);
 }
 
-.nav-instagram {
-  padding: 11px 16px;
-  border: 1px solid rgba(255,255,255,.28);
+/* NOVO: Stilovi za mobilne brze ikone/dugmad pored menija */
+.mobile-header-actions {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-insta-icon {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.header-contact-btn {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--blue-light);
+  color: var(--navy-dark);
+  padding: 8px 12px;
   border-radius: 4px;
 }
 
@@ -381,6 +404,11 @@ h2 em {
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* Prilagođeno za 4 trenera */
+.cards-4-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .team-card {
   min-height: 290px;
   padding: 45px 35px 55px;
@@ -439,6 +467,75 @@ h2 em {
 .coach .team-card p,
 .leagues-section .team-card p {
   color: rgba(255, 255, 255, 0.75);
+}
+
+/* Stilovi za dodatni tekst i listu ispod trenera */
+.coach-extra-content {
+  margin-top: 60px;
+  padding: 40px;
+  background: var(--navy-dark);
+  border-radius: 8px;
+  border: 1px solid rgba(105, 200, 245, 0.2);
+  color: white;
+}
+
+.coach-extra-intro {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue-light);
+  margin-bottom: 25px;
+}
+
+.coach-bullet-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 30px;
+  margin-bottom: 35px;
+}
+
+.coach-bullet-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.coach-bullet-list span {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--blue);
+  border-radius: 50%;
+  font-size: 11px;
+}
+
+.coach-extra-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+  text-align: center;
+}
+
+.coach-extra-footer p {
+  margin: 0 0 5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+}
+
+.coach-extra-footer .highlight-goal {
+  font-weight: 800;
+  color: var(--blue-light);
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.coach-cta-btn {
+  margin-top: 10px;
 }
 
 .leagues-section {
@@ -567,7 +664,7 @@ h2 em {
 }
 
 .value p {
-  color: #2c3a57;   
+  color: #2c3a57;    
   line-height: 1.75;     
   font-size: 14px;     
 }
@@ -741,6 +838,8 @@ footer {
   letter-spacing: .12em;
 }
 
+#treneri em, .values h2 em { color: var(--blue); }
+
 /* RESPONSIVE (MAX-WIDTH: 900px) */
 @media (max-width: 900px) {
   .main-nav {
@@ -796,7 +895,8 @@ footer {
   }
 
   .cards,
-  .cards-6 {
+  .cards-6,
+  .cards-4-grid {
     grid-template-columns: 1fr;
   }
 
@@ -828,6 +928,10 @@ footer {
   .about-card {
     padding: 30px 20px;
   }
+
+  .coach-bullet-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* RESPONSIVE (MAX-WIDTH: 680px) */
@@ -843,6 +947,11 @@ footer {
   .brand img {
     width: 75px;
     height: 52px;
+  }
+
+  /* Prikaz novih brzih mobilnih akcija */
+  .mobile-header-actions {
+    display: flex;
   }
 
   .menu-toggle {
@@ -954,6 +1063,3 @@ footer {
     display: none;
   }
 }
-
-
-#treneri em, .values h2 em { color: var(--blue); }
