@@ -845,6 +845,26 @@ footer {
   letter-spacing: .12em;
 }
 
+.main-nav .nav-insta-btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08); /* Suptilna pozadina koja se uklapa u tamni header */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.main-nav .nav-insta-btn:hover {
+  background: var(--blue-light, #1d4ed8); /* Prelazi u plavu boju kluba na hover */
+  border-color: var(--blue-light, #1d4ed8);
+  transform: translateY(-1px);
+}
+
 #treneri em, .values h2 em { color: var(--blue); }
 
 /* RESPONSIVE (MAX-WIDTH: 900px) */
@@ -955,7 +975,6 @@ footer {
   .main-nav .desktop-only-insta {
     display: none !important;
   }
-
 
   .brand img {
     width: 75px;
