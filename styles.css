@@ -565,7 +565,7 @@ h2 em {
 
 .school-img {
   width: 100%;       /* Prilagođava se koloni u kojoj se nalazi */
-  max-width: 350px;  /* Ovdje ograničite maksimalnu širinu (stavite 400px, 450px ili koliko vam odgovara) */
+  max-width: 500px;  /* Ovdje ograničite maksimalnu širinu (stavite 400px, 450px ili koliko vam odgovara) */
   height: auto;
   display: block;
 }

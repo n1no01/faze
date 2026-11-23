@@ -8,11 +8,55 @@
   <meta property="og:url" content="https://faze.ba">
   <meta name="description" content="Zvanična stranica košarkaškog kluba Faze. Saznajte sve o treningu, terminima i kontaktirajte nas.">
   <meta name="keywords" content="košarka, kk faze, košarkaški klub, ženski košarkaški klub, basketball club, trening, škola košarke, pioniri, pionirke, kadeti, kadetkinje, juniori, juniorke">
-  <title>KK FaZe | Košarkaški klub</title>
+  <title>KK Faze | Košarkaški klub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Raspored 3 trenera u prvom redu, 2 centrirana u drugom na desktopu */
+    @media (min-width: 992px) {
+      .cards-5-grid {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+      }
+      .cards-5-grid .team-card {
+        width: calc(33.333% - 16px);
+        flex: 0 0 calc(33.333% - 16px);
+      }
+    }
+    .social-nav-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon-only-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .icon-only-link:hover {
+      background: rgba(255, 255, 255, 0.16);
+      transform: translateY(-1px);
+    }
+    .social-inline-icons {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+  </style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,7 +80,9 @@
         "addressCountry": "BA"
       },
       "sameAs": [
-        "https://www.instagram.com/kosarkaski.klub.faze/"
+        "https://www.instagram.com/kosarkaski.klub.faze/",
+        "https://www.facebook.com/people/KK-FaZe/61595117752277/",
+        "https://www.youtube.com/@KK-Faze"
       ],
       "memberOf": [
         {
@@ -55,13 +101,15 @@
       "coach": [
         { "@id": "https://faze.ba/#nidzara-tabakovic" },
         { "@id": "https://faze.ba/#nino-herenda" },
-        { "@id": "https://faze.ba/#amir-aljiji" }
+        { "@id": "https://faze.ba/#amir-aljiji" },
+        { "@id": "https://faze.ba/#trener-5" }
       ],
       "employee": [
         { "@id": "https://faze.ba/#nidzara-tabakovic" },
         { "@id": "https://faze.ba/#nino-herenda" },
         { "@id": "https://faze.ba/#amir-aljiji" },
-        { "@id": "https://faze.ba/#edin-buljugic" }
+        { "@id": "https://faze.ba/#edin-buljugic" },
+        { "@id": "https://faze.ba/#trener-5" }
       ]
     },
     {
@@ -101,6 +149,15 @@
       "worksFor": { "@id": "https://faze.ba/#organization" }
     },
     {
+      "@type": "Person",
+      "@id": "https://faze.ba/#trener-5",
+      "name": "Amra Mehić (Đapo)",
+      "jobTitle": "Trenerica omladinskih selekcija",
+      "image": "https://faze.ba/images/AmraMehicDjapo.jpg",
+      "description": "Trenerica omladinskih selekcija, u klub donosi značajno igračko i trenersko iskustvo i djevojkama je uzor dostignutih visokih ambicija.",
+      "worksFor": { "@id": "https://faze.ba/#organization" }
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://faze.ba/#faq",
       "mainEntity": [
@@ -109,7 +166,7 @@
           "name": "Kako se mogu upisati u Košarkaški klub FaZe?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Upis u KK FaZe vrši se popunjavanjem kontakt forme na našoj web stranici, slanjem upita na email info@faze.ba ili direktnom porukom putem našeg zvaničnog Instagram profila (@kosarkaski.klub.faze)."
+            "text": "Upis u KK FaZe vrši se popunjavanjem kontakt forme na našoj web stranici, slanjem upita na email info@faze.ba ili direktnom porukom putem našeg zvaničnog Instagram ili Facebook profila."
           }
         },
         {
@@ -125,7 +182,7 @@
           "name": "Gdje se održavaju treninzi i kako saznati termine?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Treninzi se održavaju u Sarajevu u sali, na atletskoj stazi i u teretani. Tačni termini treninga zavise od uzrasne selekcije i dobijaju se direktno nakon prijave putem kontakt forme ili Instagrama."
+            "text": "Treninzi se održavaju u Sarajevu u sali, na atletskoj stazi i u teretani. Tačni termini treninga zavise od uzrasne selekcije i dobijaju se direktno nakon prijave putem kontakt forme ili društvenih mreža."
           }
         }
       ]
@@ -138,14 +195,21 @@
 
   <header class="site-header" id="top">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="FaZe početna">
-        <img src="images/KKFAZE.png" alt="Logo KK FaZe">
+      <a class="brand" href="#top" aria-label="Faze početna">
+        <img src="images/KKFAZE.png" alt="Logo KK Faze">
       </a>
 
-      <!-- NOVO: Brzi linkovi vidljivi na mobitelu pored hamburger menija -->
       <div class="mobile-header-actions">
         <a class="header-insta-icon" href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <!-- ZAMIJENI LINK SA PRAVIM FACEBOOK LINKOM -->
+        <a class="header-insta-icon" href="https://www.facebook.com/people/KK-FaZe/61595117752277/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <!-- ZAMIJENI LINK SA PRAVIM YOUTUBE LINKOM -->
+        <a class="header-insta-icon" href="https://www.youtube.com/@KK-Faze" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
         </a>
         <a class="header-contact-btn" href="#kontakt">Kontakt</a>
         <button class="menu-toggle" aria-label="Otvori meni" aria-expanded="false">
@@ -159,11 +223,21 @@
         <a href="#selekcije">Selekcije</a>
         <a href="#skola">Škola košarke</a>
         <a href="#takmicenja">Takmičenja</a>
+        <a href="galerija.html">Galerija</a>
         <a href="#kontakt">Kontakt</a>
-        <a href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" class="desktop-only-insta nav-insta-btn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          Instagram
-        </a>
+        <div class="social-nav-group">
+          <a href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" class="icon-only-link" aria-label="Instagram" title="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <!-- ZAMIJENI LINK SA PRAVIM FACEBOOK LINKOM -->
+          <a href="https://www.facebook.com/people/KK-FaZe/61595117752277/" target="_blank" rel="noopener noreferrer" class="icon-only-link" aria-label="Facebook" title="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <!-- ZAMIJENI LINK SA PRAVIM YOUTUBE LINKOM -->
+          <a href="https://www.youtube.com/@KK-Faze" target="_blank" rel="noopener noreferrer" class="icon-only-link" aria-label="YouTube" title="YouTube">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -177,7 +251,7 @@
           <span class="eyebrow">KOŠARKAŠKI KLUB · SARAJEVO</span>
           <h1>IGRAJ.<br><span>RASTI.</span><br>OSVOJI.</h1>
           <p>
-            FaZe je mjesto gdje košarka postaje više od igre — gradimo karakter,
+            Faze je mjesto gdje košarka postaje više od igre — gradimo karakter,
             razvijamo talenat i stvaramo ekipu koja raste zajedno.
           </p>
           <div class="hero-actions">
@@ -187,7 +261,7 @@
         </div>
 
         <div class="hero-logo">
-          <img src="images/KKFAZE.png" alt="KK FaZe logo">
+          <img src="images/KKFAZE.png" alt="KK Faze logo">
         </div>
       </div>
       <div class="hero-bottom">
@@ -208,16 +282,21 @@
         <span class="section-label light">01 / O NAMA</span>
         <h2>Više od kluba. <em>Tvoj put.</em></h2>
       </div>
-      <p>Košarkaški klub FaZe osnovan je u ljeto 2026. godine u Sarajevu sa jasnom vizijom: jačanje omladinske ženske košarke i stvaranje zdrave sredine za razvoj budućih šampionki.</p>
+      <p>Košarkaški klub Faze osnovan je u ljeto 2026. godine u Sarajevu sa jasnom vizijom: jačanje omladinske ženske košarke i stvaranje zdrave sredine za razvoj budućih šampionki.</p>
     </div>
-    <div class="about-image-wrapper" style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-      <img src="images/tim.jpg" alt="KK FaZe tim i stručni štab" style="width: 100%; height: auto; display: block;">
+    <div class="about-image-wrapper" style="margin-bottom: 16px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+      <img src="images/tim.jpg" alt="KK Faze tim i stručni štab" style="width: 100%; height: auto; display: block;">
+    </div>
+    <div style="text-align: right; margin-bottom: 35px;">
+      <a href="galerija.html" style="color: var(--blue-light); font-weight: 700; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+        Pogledaj više fotografija u galeriji →
+      </a>
     </div>
 
     <div class="about-grid">
       <div class="about-card">
-        <h3>Šta znači FaZe?</h3>
-        <p>FaZe je ime koje simbolizira pobjednički duh, snagu, odlučnost i vjeru u vlastite mogućnosti. Za nas to nije samo naziv kluba, već stav – želja da se svaki trening odradi najbolje moguće i da se svaki izazov pretvori u priliku za napredak.</p>
+        <h3>Šta znači Faze?</h3>
+        <p>Faze je ime koje simbolizira pobjednički duh, snagu, odlučnost i vjeru u vlastite mogućnosti. Za nas to nije samo naziv kluba, već stav – želja da se svaki trening odradi najbolje moguće i da se svaki izazov pretvori u priliku za napredak.</p>
         <p><strong>Mentalitet pobjednika:</strong> Boriti se, učiti iz poraza, poštovati protivnika i uvijek težiti tome da budemo bolji nego jučer.</p>
         <div class="about-quote">
           <span>IGRAJ. RASTI. POBJEĐUJ!</span>
@@ -235,7 +314,7 @@
           <li>✔ Podrška za mlade talente i reprezentativke</li>
         </ul>
         <div class="about-footer-text">
-          <strong>FaZe – ime za one koji vjeruju da mogu više.</strong>
+          <strong>Faze – ime za one koji vjeruju da mogu više.</strong>
         </div>
       </div>
     </div>
@@ -253,7 +332,7 @@
       <p>Iskustvo, znanje i posvećenost za razvoj pobjedničkog mentaliteta.</p>
     </div>
 
-    <div class="cards cards-4-grid">
+    <div class="cards cards-5-grid">
       <!-- Trener 1: Nidžara -->
       <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
        <div style="height: 220px; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center;">
@@ -293,7 +372,7 @@
         </div>
       </div>
 
-      <!-- Trener 4: (Placeholder / Dodatni trener) -->
+      <!-- Trener 4: Edin -->
       <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
         <div style="height: 220px; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center;">
           <img src="images/EdinBuljugic.jpg" alt="Edin Buljugić" style="max-width: 100%; max-height: 100%; object-fit: contain;">
@@ -302,7 +381,20 @@
           <span class="card-number">04</span>
           <h3>Edin Buljugić</h3>
           <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Doktor ekipe</p>
-          <p>Zadužen za zdravlje i medicinsku podršku ekipe. Iskustvo je stekao radeći sa košarkaškom i rukometnom reprezentacijom BiH. </p>
+          <p>Zadužen za zdravlje i medicinsku podršku ekipe. Iskustvo je stekao radeći sa košarkaškom i rukometnom reprezentacijom BiH.</p>
+        </div>
+      </div>
+
+    
+      <div class="team-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="height: 220px; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+          <img src="images/AmraMehicDjapo.jpg" alt="Amra Mehić (Đapo)" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <div style="padding: 30px;">
+          <span class="card-number">05</span>
+          <h3>Amra Mehić (Đapo)</h3>
+          <p style="color: var(--blue-light); font-weight: 700; margin: 6px 0 12px; font-size: 11px; text-transform: uppercase;">Trenerica omladinskih selekcija</p>
+          <p>Trenerica omladinskih selekcija, u klub donosi značajno igračko i trenersko iskustvo i djevojkama je uzor dostignutih visokih ambicija.</p>
         </div>
       </div>
     </div>
@@ -343,7 +435,7 @@
           </div>
         </div>
         <div class="about-image-wrapper" style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
-          <img src="images/fullteam.jpg" alt="KK FaZe" style="width: 100%; height: auto; display: block;">
+          <img src="images/fullteam.jpg" alt="KK Faze" style="width: 100%; height: auto; display: block;">
         </div>
         <div class="cards cards-6">
 
@@ -389,7 +481,7 @@
 
     <section class="section school" id="skola">
       <div class="container school-grid">
-        <img class="school-img" height="auto" src="images/skolakosarke.png" alt="Škola košarke">
+        <img class="school-img" height="auto" src="images/skolakosarke.jpg" alt="Škola košarke">
 
         <div class="school-copy">
           <span class="section-label">04 / ŠKOLA KOŠARKE</span>
@@ -398,7 +490,7 @@
             Škola košarke je mješovita grupa djevojčica i dječaka. Bez obzira na
             prethodno iskustvo, cilj je da djeca kroz zabavu i kvalitetan rad
             zavole košarku i steknu dobre sportske navike. Iz škole košarke djevojčice napreduju
-            u FaZe ženske selekcije, a dječaci koji su spremni za selekciju dobijaju priliku 
+            u Faze ženske selekcije, a dječaci koji su spremni za selekciju dobijaju priliku 
             i preporuku da se pridruže muškoj ekipi naših sportskih partnera.
           </p>
 
@@ -491,7 +583,18 @@
     </div>
 
     <div class="leagues-footer-note" style="margin-top: 35px; font-size: 14px; color: rgba(255,255,255,0.7);">
-      Svježe informacije o ligama, takmičenjima, turnirima i rezultatima pratite na našem <a href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" style="color: var(--blue-light); text-decoration: underline; font-weight: 600;">instagram kanalu</a>.
+      Svježe informacije o ligama, takmičenjima, turnirima i rezultatima pratite na našim kanalima:
+      <span class="social-inline-icons">
+        <a href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" class="icon-only-link" aria-label="Instagram" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://www.facebook.com/people/KK-FaZe/61595117752277/" target="_blank" rel="noopener noreferrer" class="icon-only-link" aria-label="Facebook" title="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="https://www.youtube.com/@KK-Faze" target="_blank" rel="noopener noreferrer" class="icon-only-link" aria-label="YouTube" title="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        </a>
+      </span>
     </div>
   </div>
 </section>
@@ -546,12 +649,9 @@
             <span style="height: 1px; background: rgba(255,255,255,0.1); flex: 1;"></span>
           </div>
 
-          <div class="cta-actions" style="display: flex; justify-content: center; gap: 1rem;">
-            <a href="mailto:info@faze.ba" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); transition: background 0.2s;">
+          <div class="cta-actions" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem;">
+            <a href="mailto:info@faze.ba" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); transition: background 0.2s;">
               info@faze.ba
-            </a>
-            <a href="https://www.instagram.com/kosarkaski.klub.faze/" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 4px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); transition: background 0.2s;">
-              Instagram ↗
             </a>
           </div>
 
@@ -563,8 +663,8 @@
   <footer>
     <div class="container footer-wrap">
       <div class="footer-brand">
-        <img src="images/KKFAZE.png" alt="KK FaZe">
-        <span>Košarkaški klub FaZe · Sarajevo</span>
+        <img src="images/KKFAZE.png" alt="KK Faze">
+        <span>Košarkaški klub Faze · Sarajevo</span>
       </div>
      
       <div class="copyright">© <span id="year"></span> FAZE</div>

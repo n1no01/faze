@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerija | KK Faze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .gallery-page {
+      padding-top: 130px;
+      padding-bottom: 80px;
+      min-height: 85vh;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.04);
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.25s ease, transform 0.3s ease;
+    }
+    .gallery-item img.loaded {
+      opacity: 1;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+    .gallery-item.is-broken {
+      display: none;
+    }
+    .load-more-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 36px;
+    }
+
+    /* Lightbox za uvećani prikaz slike */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 10, 24, 0.94);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 38px;
+      cursor: pointer;
+      line-height: 1;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Faze početna">
+        <img src="images/KKFAZE.png" alt="Logo KK Faze">
+      </a>
+
+      <nav class="main-nav" style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html">← Nazad na početnu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dark-section gallery-page">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <span class="section-label light">KK FAZE · FOTOGRAFIJE</span>
+          <h2>Naša <em>galerija</em></h2>
+        </div>
+        <p>Trenuci sa treninga, utakmica, turnira i druženja naših selekcija.</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid"></div>
+
+      <div class="load-more-wrap">
+        <button type="button" id="loadMoreBtn" class="btn btn-primary" style="cursor: pointer; border: none;">
+          Učitaj još slika
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" aria-label="Zatvori">&times;</span>
+    <img id="lightbox-img" src="" alt="Uvećana slika" onclick="event.stopPropagation()">
+  </div>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div class="footer-brand">
+        <img src="images/KKFAZE.png" alt="KK Faze">
+        <span>Košarkaški klub Faze · Sarajevo</span>
+      </div>
+      <div class="copyright">© <span id="year"></span> FAZE</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const photoNumbers = [
+      14, 20, 42, 49, 81, 86, 97, 100, 107, 108, 111, 116, 119, 121, 123,
+      124, 125, 126, 130, 132, 133, 136, 143, 144, 147, 149, 240, 242, 153,
+      163, 169, 172, 176, 179, 181, 188, 193, 198, 205, 209, 211, 221, 222,
+      227, 231, 234
+    ];
+
+    const BATCH_SIZE = 12;
+    let currentIndex = 0;
+
+    const galleryGrid = document.getElementById('galleryGrid');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+    function renderBatch() {
+      const nextBatch = photoNumbers.slice(currentIndex, currentIndex + BATCH_SIZE);
+
+      nextBatch.forEach((num) => {
+        const src = `galerija/${num}_FAZE_Sarajevo.jpg`;
+
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `KK Faze Sarajevo - fotografija ${num}`;
+        img.decoding = 'async';
+
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        });
+
+        img.addEventListener('error', () => {
+          item.classList.add('is-broken');
+        });
+
+        item.addEventListener('click', () => openLightbox(src, img.alt));
+        item.appendChild(img);
+        galleryGrid.appendChild(item);
+      });
+
+      currentIndex += nextBatch.length;
+      updateButtonState();
+    }
+
+    function updateButtonState() {
+      const remaining = photoNumbers.length - currentIndex;
+      if (remaining <= 0) {
+        loadMoreBtn.style.display = 'none';
+      } else {
+        loadMoreBtn.textContent = `Učitaj još slika (preostalo ${remaining})`;
+      }
+    }
+
+    loadMoreBtn.addEventListener('click', renderBatch);
+
+    function openLightbox(src, alt) {
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    renderBatch();
+  </script>
+</body>
+</html>
