@@ -16,7 +16,7 @@
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 18px;
       margin-top: 36px;
     }
@@ -35,11 +35,7 @@
       object-fit: cover;
       object-position: center 20%;
       display: block;
-      opacity: 0;
-      transition: opacity 0.25s ease, transform 0.3s ease;
-    }
-    .gallery-item img.loaded {
-      opacity: 1;
+      transition: transform 0.3s ease;
     }
     .gallery-item:hover img {
       transform: scale(1.04);
@@ -51,6 +47,14 @@
       display: flex;
       justify-content: center;
       margin-top: 36px;
+      position: relative;
+      z-index: 5;
+    }
+    #loadMoreBtn {
+      cursor: pointer;
+      border: none;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* Lightbox za uvećani prikaz slike */
@@ -95,6 +99,10 @@
       <a class="brand" href="index.html" aria-label="Faze početna">
         <img src="images/KKFAZE.png" alt="Logo KK Faze">
       </a>
+
+      <nav class="main-nav" style="display: flex; align-items: center; gap: 20px;">
+        <a href="index.html">← Nazad na početnu</a>
+      </nav>
     </div>
   </header>
 
@@ -105,12 +113,13 @@
           <span class="section-label light">KK FAZE · FOTOGRAFIJE</span>
           <h2>Naša <em>galerija</em></h2>
         </div>
+        <p>Trenuci sa treninga, utakmica, turnira i druženja naših selekcija.</p>
       </div>
 
       <div class="gallery-grid" id="galleryGrid"></div>
 
       <div class="load-more-wrap">
-        <button type="button" id="loadMoreBtn" class="btn btn-primary" style="cursor: pointer; border: none;">
+        <button type="button" id="loadMoreBtn" class="btn btn-primary">
           Učitaj još slika
         </button>
       </div>
@@ -133,79 +142,100 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
 
-    const photoNumbers = [
-      14, 20, 42, 49, 81, 86, 97, 100, 107, 108, 111, 116, 119, 121, 123,
-      124, 125, 126, 130, 132, 133, 136, 143, 144, 147, 149, 240, 242, 153,
-      163, 169, 172, 176, 179, 181, 188, 193, 198, 205, 209, 211, 221, 222,
-      227, 231, 234
-    ];
+      const photoNumbers = [
+        14, 20, 42, 49, 81, 86, 97, 100, 107, 108, 111, 116, 119, 121, 123,
+        124, 125, 126, 130, 132, 133, 136, 143, 144, 147, 149, 240, 242, 153,
+        163, 169, 172, 176, 179, 181, 188, 193, 198, 205, 209, 211, 221, 222,
+        227, 231, 234
+      ];
 
-    const BATCH_SIZE = 12;
-    let currentIndex = 0;
+      const BATCH_SIZE = 12;
+      let currentIndex = 0;
 
-    const galleryGrid = document.getElementById('galleryGrid');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
+      const galleryGrid = document.getElementById('galleryGrid');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
 
-    function renderBatch() {
-      const nextBatch = photoNumbers.slice(currentIndex, currentIndex + BATCH_SIZE);
+      function updateButtonState() {
+        const remaining = photoNumbers.length - currentIndex;
+        if (remaining <= 0) {
+          loadMoreBtn.style.display = 'none';
+        } else {
+          loadMoreBtn.style.display = 'inline-flex';
+          loadMoreBtn.textContent = `Učitaj još slika (preostalo ${remaining})`;
+        }
+      }
 
-      nextBatch.forEach((num) => {
-        const src = `galerija/${num}_FAZE_Sarajevo.jpg`;
+      function renderBatch() {
+        if (currentIndex >= photoNumbers.length) {
+          updateButtonState();
+          return;
+        }
 
-        const item = document.createElement('div');
-        item.className = 'gallery-item';
+        const nextBatch = photoNumbers.slice(currentIndex, currentIndex + BATCH_SIZE);
 
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = `KK Faze Sarajevo - fotografija ${num}`;
-        img.decoding = 'async';
+        nextBatch.forEach((num) => {
+          const src = `galerija/${num}_FAZE_Sarajevo.jpg`;
 
-        img.addEventListener('load', () => {
-          img.classList.add('loaded');
+          const item = document.createElement('div');
+          item.className = 'gallery-item';
+
+          const img = document.createElement('img');
+          img.alt = `KK Faze Sarajevo - fotografija ${num}`;
+          img.decoding = 'async';
+
+          img.addEventListener('error', () => {
+            item.classList.add('is-broken');
+          });
+
+          img.src = src;
+
+          item.addEventListener('click', () => {
+            openLightbox(src, img.alt);
+          });
+
+          item.appendChild(img);
+          galleryGrid.appendChild(item);
         });
 
-        img.addEventListener('error', () => {
-          item.classList.add('is-broken');
-        });
+        currentIndex += nextBatch.length;
+        updateButtonState();
+      }
 
-        item.addEventListener('click', () => openLightbox(src, img.alt));
-        item.appendChild(img);
-        galleryGrid.appendChild(item);
+      function handleLoadMore(e) {
+        if (e) {
+          e.preventDefault();
+        }
+        renderBatch();
+      }
+
+      loadMoreBtn.addEventListener('click', handleLoadMore);
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox.classList.add('active');
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+      }
+
+      lightbox.addEventListener('click', closeLightbox);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
       });
 
-      currentIndex += nextBatch.length;
-      updateButtonState();
-    }
-
-    function updateButtonState() {
-      const remaining = photoNumbers.length - currentIndex;
-      if (remaining <= 0) {
-        loadMoreBtn.style.display = 'none';
-      } else {
-        loadMoreBtn.textContent = `Učitaj još slika (preostalo ${remaining})`;
-      }
-    }
-
-    loadMoreBtn.addEventListener('click', renderBatch);
-
-    function openLightbox(src, alt) {
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = src;
-      lightboxImg.alt = alt;
-      document.getElementById('lightbox').classList.add('active');
-    }
-
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-
-    renderBatch();
+      renderBatch();
+    })();
   </script>
 </body>
 </html>
